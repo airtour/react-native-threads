@@ -10,6 +10,9 @@ const self = {
 
   postMessage: (message) => {
     if (!message) { return; }
+    if(!ThreadSelfManager){
+      return;
+    }
     ThreadSelfManager.postMessage(message);
   }
 };
