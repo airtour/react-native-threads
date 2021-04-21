@@ -7,6 +7,9 @@ const { ThreadManager } = NativeModules;
 
 export default class Thread {
   constructor(jsPath) {
+    if(!ThreadManager){
+      return;
+    }
     if (!jsPath || !jsPath.endsWith('.js')) {
       throw new Error('Invalid path for thread. Only js files are supported');
     }
